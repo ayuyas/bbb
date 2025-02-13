@@ -1,0 +1,31 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "bbb" ]
+  pull_request:
+    branches: [ "bbb" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: set up JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        cache: gradle
+    - name: Set up Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with: 
+        gradle-version: 6
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: gradle gradlew--wapper-version 4.6
+           ./gradlew build
