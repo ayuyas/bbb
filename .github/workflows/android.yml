@@ -5,6 +5,7 @@ on:
     branches: [ "bbb" ]
   pull_request:
     branches: [ "bbb" ]
+  workflow_dispatch:
 
 jobs:
   build:
