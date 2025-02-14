@@ -8,7 +8,7 @@ namespace = "com.androlua"
         minSdkVersion 25
         targetSdkVersion 28
         ndk {
-            abiFilters 'armeabi-v7a'
+            abiFilters 'arm64-v8a','armeabi-v7a'
         }
     }
     packagingOptions {
