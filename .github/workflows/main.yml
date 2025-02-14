@@ -32,7 +32,11 @@ jobs:
     - name: Build with Gradle
       run: 
         ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
-        find / -name '*.apk'
+        ls /
+        ls 
+        ls gradle
+        ls gradle/build
+        #find / -name '*.apk'
         #./gradlew build
         
     - name: Push Assets To "release" Branch
