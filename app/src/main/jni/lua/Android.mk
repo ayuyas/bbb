@@ -6,7 +6,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := lua
 CAL_ARM_MODE := arm
 TARGET_PLATFORM := armeabi-v7a
-TARGET_ABI := android-14-armeabi
+TARGET_ABI := android-21-armeabi
 LOCAL_CFLAGS += -std=c99
 
 
