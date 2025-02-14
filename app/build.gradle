@@ -1,7 +1,7 @@
 plugins{ id 'com.android.application' version '8.8.0' }
 android {
 namespace = "com.androlua"
-    compileSdkVersion 28
+    compileSdkVersion 35
     buildToolsVersion '35.0.0'
     defaultConfig {
         applicationId "com.androlua"
