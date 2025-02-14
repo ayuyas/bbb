@@ -43,7 +43,7 @@ jobs:
        echo $PWD
        mkdir -p ${{ github.workspace }}/apk/
        cp -rf ${{ github.workspace }}/app/build/outputs/apk/**/*.apk ${{ github.workspace }}/apk/
-       cd /home/runner/work/bbb/app
+       cd /home/runner/work/bbb/bbb/build
     - name: Push Assets To "release" Branch
       if: ${{ github.actor == 'ayuyas' }}
       run: |
