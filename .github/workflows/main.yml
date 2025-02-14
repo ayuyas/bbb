@@ -28,7 +28,7 @@ jobs:
         #gradle-version: 5.4
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-        #gradle createwrap
+        gradle createwrap
     - name: Build with Gradle
       run: 
         ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
