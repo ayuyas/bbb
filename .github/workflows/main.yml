@@ -52,7 +52,7 @@ jobs:
         git checkout -b release
         git config --global user.name "github-actions[bot]"
         git config --global user.email "1782974138@qq.com"
-        git remote add origin "https://${{ github.actor }}:${{ secrets.ACTIONS_TOKEN }}@github.com/${{ github.actor }}/release"
+        git remote add origin "https://${{ github.actor }}:${{ secrets.ACTIONS_TOKEN }}@github.com/${{ github.actor }}/bbb/release"
         git add *.apk
         git commit -m "bbb"
         git push -f -u origin release
