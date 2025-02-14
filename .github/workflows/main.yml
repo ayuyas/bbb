@@ -33,6 +33,7 @@ jobs:
       run: 
         ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
         #./gradlew build
+        find / -name '*.apk'
     - name: Push Assets To "release" Branch
       if: ${{ github.actor == 'ayuyas' }}
       run: |
