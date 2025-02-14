@@ -40,8 +40,7 @@ jobs:
     - name: Build with Gradle
       run: 
         ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
-        tree
-        tree /
+        java -version
         #ls gradle
         #ls gradle/build
         #find / -name '*.apk'
