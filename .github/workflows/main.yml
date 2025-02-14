@@ -32,7 +32,6 @@ jobs:
     - name: Build with Gradle
       run: 
         ./gradlew assemblerelease
-        java a.java
         #java -version
         #ls gradle
         #ls gradle/build
