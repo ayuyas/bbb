@@ -1,5 +1,6 @@
-apply plugin: 'com.android.application'
+plugins{ id 'com.android.application' version '8.8.0' }
 android {
+namespace = "com.androlua"
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     defaultConfig {
