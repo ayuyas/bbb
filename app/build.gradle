@@ -2,11 +2,11 @@ plugins{ id 'com.android.application' version '8.8.0' }
 android {
 namespace = "com.androlua"
     compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    buildToolsVersion '35.0.0'
     defaultConfig {
         applicationId "com.androlua"
-        minSdkVersion 22
-        targetSdkVersion 27
+        minSdkVersion 25
+        targetSdkVersion 28
         ndk {
             abiFilters 'armeabi-v7a'
         }
