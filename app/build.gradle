@@ -3,6 +3,8 @@ android {
 namespace = "com.androlua"
     compileSdkVersion 35
     buildToolsVersion '35.0.0'
+   // project.archivesBaseName = "Androlua"
+   // versionName "4.4.4"
     defaultConfig {
         applicationId "com.androlua"
         minSdkVersion 25
@@ -34,6 +36,13 @@ namespace = "com.androlua"
         }
     }
     productFlavors {
+    }
+    applicationVariants.all { variant ->
+        // 设置输出文件名
+        variant.outputs.all { output ->
+            def newFileName = "Androlua.apk"
+            output.outputFileName = newFileName
+        }
     }
 }
 
