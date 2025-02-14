@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main
+public class a
 {
 	public static void eachDir (File dirfile){
 		File[] files=dirfile.listFiles();
