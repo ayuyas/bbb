@@ -29,6 +29,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
         #gradle createwrap
+    - name: 更新包列表并安装软件
+      run: |
+        sudo apt-get update
+        sudo apt-get install tree
     - name: installtree
       uses: gerlero/apt-install@v1
       with:
