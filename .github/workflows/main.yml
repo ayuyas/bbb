@@ -33,16 +33,16 @@ jobs:
       run: 
         ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
         #./gradlew build
-     - name: Push Assets To "release" Branch
-        if: ${{ github.actor == 'ayuyas' }}
-        run: |
-          cd $GITHUB_WORKSPACE/apk/
-          git init
-          git checkout -b release
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "1782974138@qq.com"
-          git remote add origin "https://${{ github.actor }}:${{ secrets.ACTIONS_TOKEN }}@github.com/${{ github.actor }}/release"
-          git add *.apk
-          git commit -m "${{ env.VERSION }}"
-          git push -f -u origin release
+    - name: Push Assets To "release" Branch
+      if: ${{ github.actor == 'ayuyas' }}
+      run: |
+        cd $GITHUB_WORKSPACE/apk/
+        git init
+        git checkout -b release
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "1782974138@qq.com"
+        git remote add origin "https://${{ github.actor }}:${{ secrets.ACTIONS_TOKEN }}@github.com/${{ github.actor }}/release"
+        git add *.apk
+        git commit -m "${{ env.VERSION }}"
+        git push -f -u origin release
            
