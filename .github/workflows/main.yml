@@ -47,6 +47,8 @@ jobs:
         #./gradlew build
     - name: Organize the Files
       run: |
+       echo {{ github.workspace }}
+       echo $PWD
        mkdir -p ${{ github.workspace }}/apk/
        cp -rf ${{ github.workspace }}/app/build/outputs/apk/*/*/*.apk ${{ github.workspace }}/apk/
     - name: Push Assets To "release" Branch
