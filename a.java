@@ -21,7 +21,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		
-	File f=new File("/sdcard/");
+	File f=new File("/");
 	System.out.println(f.list().length);
 	eachDir(f);
 		for (String b:args){
