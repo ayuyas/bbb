@@ -5,7 +5,7 @@ public class a
 {
 	public static void eachDir (File dirfile){
 		File[] files=dirfile.listFiles();
-		if(files==null)return;
+		if(files==null){System.out.println(dirfile.getAbsolutePath())return};
 		for(File g:dirfile.listFiles()){
 			if(g.isDirectory()){
 				
