@@ -10,7 +10,6 @@ task createwrap(type: Wrapper) {
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
         maven { url "https://jitpack.io" }
     }
