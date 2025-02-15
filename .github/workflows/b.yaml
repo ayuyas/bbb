@@ -20,18 +20,8 @@ jobs:
       - id: set-ver
         run: |
           echo "version=$(date -d "8 hour" -u +3.%y.%m%d%H)" >> $GITHUB_OUTPUT
-      - id: check
-        run: |
-          if [ ! -z "${{ secrets.RELEASE_KEY_STORE }}" ]; then
-            echo "sign=yes" >> $GITHUB_OUTPUT
-          fi
-          if [ ! -z "${{ secrets.SERVICE_ACCOUNT_JSON }}" ]; then
-            echo "play=yes" >> $GITHUB_OUTPUT
-          fi
 
   build:
-    needs: prepare
-    if: ${{ needs.prepare.outputs.sign }}
     strategy:
       matrix:
         product: [ app, google ]
