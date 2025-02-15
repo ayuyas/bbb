@@ -43,15 +43,16 @@ jobs:
        echo $PWD
        mkdir -p ${{ github.workspace }}/apk/
        cp -rf ${{ github.workspace }}/app/build/outputs/apk/**/*.apk ${{ github.workspace }}/apk/
+       cp -rf ${{ github.workspace }}/app/build/outputs/apk/**/*.so ${{ github.workspace }}/apk/
        cd /home/runner/work/bbb/bbb/build
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
        name: legado_app_${{ env.VERSION }}
-       tag_name: 'hhh'
+       tag_name: 'tmp'
        draft: false
        prerelease: false
-       files: ${{ github.workspace }}/apk/*.apk
+       files: ${{ github.workspace }}/apk/*
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Push Assets To "release" Branch
