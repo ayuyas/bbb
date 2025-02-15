@@ -1,0 +1,30 @@
+name: pushgradle-wrapper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+    - name: Set up Gradle
+      run: gradle createwrap
+    - name: get wrapper
+      uses: softprops/action-gh-release@v2
+      with:
+       name: legado_app_${{ env.VERSION }}
+       tag_name: 'gradle-wrapper'
+       draft: false
+       prerelease: false
+       files: ${{ github.workspace }}/gradle/wrapper/*
+      
+    
