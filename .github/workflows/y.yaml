@@ -21,7 +21,7 @@ jobs:
     - name: get wrapper
       uses: softprops/action-gh-release@v2
       with:
-       name: legado_app_${{ env.VERSION }}
+       name: gradle-wrappee
        tag_name: 'gradle-wrapper'
        draft: false
        prerelease: false
