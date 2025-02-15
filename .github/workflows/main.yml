@@ -48,7 +48,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
        name: legado_app_${{ env.VERSION }}
-       tag_name: ${{ env.VERSION }}
+       tag_name: 'hhh'
        body_path: ${{ github.workspace }}/CHANGELOG.md
        draft: false
        prerelease: false
