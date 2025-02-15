@@ -50,14 +50,7 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
-      - name: Release Apk Sign
-        run: |
-          # not use this output
-          # echo "KeyStore=yes" >> $GITHUB_OUTPUT
-          echo -e "\n" >> gradle.properties
-          echo RELEASE_KEY_ALIAS='${{ secrets.RELEASE_KEY_ALIAS }}' >> gradle.properties
-          echo RELEASE_KEY_PASSWORD='${{ secrets.RELEASE_KEY_PASSWORD }}' >> gradle.properties
-          echo RELEASE_STORE_PASSWORD='${{ secrets.RELEASE_STORE_PASSWORD }}' >> gradle.properties
+      
           
 
       - name: Unify Version Name
@@ -82,14 +75,14 @@ jobs:
       - name: Upload App To Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: legado_${{ env.product }}
+          name: ayuyas_${{ env.product }}
           path: ${{ github.workspace }}/apk/*.apk
 
       - name: Release
         if: ${{ env.product == 'app' }}
         uses: softprops/action-gh-release@v2
         with:
-          name: legado_app_${{ env.VERSION }}
+          name: ayuyas${{ env.VERSION }}
           tag_name: ${{ env.VERSION }}
           body_path: ${{ github.workspace }}/CHANGELOG.md
           draft: false
