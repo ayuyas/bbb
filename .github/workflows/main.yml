@@ -40,10 +40,9 @@ jobs:
     - name: Organize the Files
       run: |
        echo ${{ github.workspace }}
-       echo $PWD
        mkdir -p ${{ github.workspace }}/apk/
        cp -rf ${{ github.workspace }}/app/build/outputs/apk/**/*.apk ${{ github.workspace }}/apk/
-       cp -rf ${{ github.workspace }}/**/*.so ${{ github.workspace }}/apk/
+       #cp -rf ${{ github.workspace }}/**/*.so ${{ github.workspace }}/apk/
        cd /home/runner/work/bbb/bbb/build
     - name: Release
       uses: softprops/action-gh-release@v2
